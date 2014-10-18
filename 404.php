@@ -8,17 +8,18 @@
     // Process the page loading
     require("classes/ProcessPage.php");
 
-    $activeTab = "contact";
-    
     // Load navbar
     include './assets/navbar.php';
+
+    // Includes slider
+    require './assets/slider.php';
 
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
+        include("views/v-404.php");
     } else {
-        include_once("views/v-index.php");
+        include("views/v-404.php");
     }
 
 

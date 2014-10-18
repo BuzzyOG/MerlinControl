@@ -8,17 +8,20 @@
     // Process the page loading
     require("classes/ProcessPage.php");
 
-    $activeTab = "contact";
-    
+    $activeTab = "advertise";
+
     // Load navbar
     include './assets/navbar.php';
+
+    // Includes slider
+    require './assets/slider.php';
 
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
+        include("views/v-advertise.php");
     } else {
-        include_once("views/v-index.php");
+        include("views/v-advertise.php");
     }
 
 

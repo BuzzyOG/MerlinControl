@@ -7,18 +7,21 @@
     require_once("classes/Login.php");
     // Process the page loading
     require("classes/ProcessPage.php");
+    // Load the social stats
+    require './assets/facebook-array.php';
 
-    $activeTab = "contact";
-    
     // Load navbar
     include './assets/navbar.php';
+
+    // Includes slider
+    require './assets/slider.php';
 
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
+        include("views/v-stats.php");
     } else {
-        include_once("views/v-index.php");
+        include("views/v-stats.php");
     }
 
 

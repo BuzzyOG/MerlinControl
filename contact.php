@@ -16,9 +16,9 @@
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
+        include_once("views/v-contact-in.php");
     } else {
-        include_once("views/v-index.php");
+        include_once("views/v-contact-in.php");
     }
 
 

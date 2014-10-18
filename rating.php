@@ -5,22 +5,20 @@
     include './assets/header.php';
     // load the login class
     require_once("classes/Login.php");
+    // load the rating class
+    require("classes/Rating.php");
     // Process the page loading
     require("classes/ProcessPage.php");
 
-    $activeTab = "contact";
-    
     // Load navbar
     include './assets/navbar.php';
 
+    // Includes slider
+    require './assets/slider.php';
 
-    // if logged in display content
-    if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
-    } else {
-        include_once("views/v-index.php");
-    }
 
+    // Views
+    include './views/v-rating.php';
 
     // Load footer
     include("assets/footer.php");

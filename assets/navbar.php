@@ -13,7 +13,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#contact">Contact</a></li>
-					<li><a href="#login">Login</a></li>
+					<li><?php echo $navlogin; ?></li>
 				</ul>
 			</div>
 	</div><!--CONTAINER-->

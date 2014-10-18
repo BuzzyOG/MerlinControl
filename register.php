@@ -5,22 +5,26 @@
     include './assets/header.php';
     // load the login class
     require_once("classes/Login.php");
+    require_once("classes/Registration.php");
     // Process the page loading
     require("classes/ProcessPage.php");
 
-    $activeTab = "contact";
-    
     // Load navbar
     include './assets/navbar.php';
+
+    // Includes slider
+    require './assets/slider.php';
+
+    // Initializes the registration
+    $registration = new Registration();
 
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include_once("views/v-index.php");
+        include("views/v-logged-in.php");
     } else {
-        include_once("views/v-index.php");
+        include("views/v-register.php");
     }
-
 
     // Load footer
     include("assets/footer.php");
