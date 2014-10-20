@@ -1,8 +1,8 @@
 <?php
 
 define("DB_HOST", "localhost");
-define("DB_NAME", "MerlinControl");
-define("DB_USER", "MerlinControl");
-define("DB_PASS", "TM9qFBYRxQqPn4YT");
+define("DB_NAME", "GunsDaily");
+define("DB_USER", "love");
+define("DB_PASS", "");
 
 ?>
