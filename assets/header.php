@@ -22,12 +22,13 @@
 
 	<link rel="shortcut icon" href="assets/ico/favicon.png">
 	<script src="assets/js/application.js"></script>
+	<script src="//use.typekit.net/qhs8uvo.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
 	
 </head>
 
 
 <!-- ////////////////////////////////////
-	BEGIN BODY
+	BEGIN BODY!
 ///////////////////////////////////// -->
 
-<body>

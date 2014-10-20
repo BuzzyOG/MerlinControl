@@ -7,10 +7,9 @@
     require_once("classes/Login.php");
     // Process the page loading
     require("classes/ProcessPage.php");
-    // load the shop class
-    require_once("classes/Shop.php");
-    // load the ordering class
-    require_once("classes/Orders.php");
+
+    // Process the page loading
+    require("classes/VerifyEmail.php");
 
     $activeTab = "Login / Register";
     
@@ -19,9 +18,9 @@
 
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include("views/v-account.php");
+        include("views/v-verifyemail-signedin.php");
     } else {
-        include("views/v-signin.php");
+        include("views/v-verifyemail.php");
     }
 
 

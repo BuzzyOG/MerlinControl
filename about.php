@@ -7,25 +7,21 @@
     require_once("classes/Login.php");
     // Process the page loading
     require("classes/ProcessPage.php");
-    // load the shop class
-    require_once("classes/Shop.php");
-    // load the ordering class
-    require_once("classes/Orders.php");
 
-    $activeTab = "Login / Register";
+    $activeTab = "contact";
     
     // Load navbar
     include './assets/navbar.php';
 
+
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
-        include("views/v-account.php");
+        include_once("views/v-about.php");
     } else {
-        include("views/v-signin.php");
+        include_once("views/v-about.php");
     }
 
 
     // Load footer
-    include("assets/footer.php");
-    echo "<div style='margin-bottom: -500px;'></div>";
+    include("./assets/footer.php");
 ?>

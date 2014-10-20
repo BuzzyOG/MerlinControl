@@ -1,4 +1,5 @@
 </div><!--page-wrap-->
+</body>
 <footer id="footer">
 	<div class="container">
 			<div class="row">
@@ -29,5 +30,5 @@
 		</div>
 </footer>
 	<script>$("body").data("page", "frontpage");</script>
-	</body>
+	<script src="assets/js/application.js"></script>
 </html>

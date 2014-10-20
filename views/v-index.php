@@ -2,7 +2,11 @@
 	<h1>Welcome to the next generation of website management</h1>
 </div>
 <div class="top"></div>
-
+<style type="text/css">
+.bg-street {
+	background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+}
+</style>
 
 <!-- ////////////////////////////////////
 	HOMEPAGE HEADER
@@ -10,7 +14,7 @@
 
 <div id="header">
 	<div class="main">
-	    <div class="blur"></div>
+	    <div id="backing" style="background-image: url(http://root-image.luke.sx/7c0b.png);" class="blur">Loading</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -37,7 +41,7 @@
 						<button href="#Download" class="btn btn-default">Read Case</button>
 
 						<p>0.0.1-indev</p>
-						<div class="carousel-caption">Slide 1</div>
+						<div class="carousel-caption">http://root-image.luke.sx/7c0b.png</div>
 
 					</div>
 				</div>
@@ -45,17 +49,17 @@
             <div class="item">
                <div class="row">
 		            <div class="col-md-5">
-						<img src="http://luke.sx/assets/img/SlashCraft.png" width="100%" align="right">
+						<img src="http://luke.sx/assets/img/MinereachMC.png" width="100%" align="right">
 					</div>
 					<div class="col-md-7">
 
-						<h1>SlashCraft</h1>
+						<h1>Minereach</h1>
 
-						<h4>This is clearly just an example, but imagine if this was your product featured here? Wouldn't that be amazing right?</h4>
+						<h4>Example Time, but imagine if this was your product featured here? Wouldn't that be amazing right?</h4>
 						<button href="#Download" class="btn btn-default">Read Case</button>
 
 						<p>0.0.1-indev</p>
-						<div class="carousel-caption">Slide 2</div>
+						<div class="carousel-caption">http://root-image.luke.sx/4e6d.png</div>
 
 					</div>
 				</div>
@@ -63,7 +67,7 @@
             <div class="item">
            		<div class="row">
 		            <div class="col-md-5">
-						<img src="http://luke.sx/assets/img/SlashCraft.png" width="100%" align="right">
+						<img src="http://luke.sx/assets/img/ChromaHills.png" width="100%" align="right">
 					</div>
 					<div class="col-md-7">
 
@@ -74,7 +78,7 @@
 
 						<p>0.0.1-indev</p>
 
-						<div class="carousel-caption">Slide 3</div>
+						<div class="carousel-caption">http://root-image.luke.sx/3583.png</div>
 
 					</div>
 				</div>
@@ -105,24 +109,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="main">So what's all the fuss about?</h1>
+
 				<script type="text/javascript">
+
 					$('.carousel').carousel();
 					var caption = $('div.item:nth-child(1) .carousel-caption');
-					$('#right h1').html(caption.html());
+					$('h1#backing').html(caption.html());
 					caption.css('display','none');
+
 					$(".carousel").on('slide.bs.carousel', function(evt) {
-					 
-					   
+
 					   var caption = $('div.item:nth-child(' + ($(evt.relatedTarget).index()+1) + ') .carousel-caption');
-					   $('h1.backing').html(caption.html());
-					   caption.css('display','none');
+
+					   $('#backing').html(caption.html());
+
+					   // This should work
+					   $('#backing').css('background-image','url(' + caption.html() + ')');
+					   $('#backing').css('display','-webkit-box !important');
+
 					});
+
 				</script>
 
-
-             <h1 class="backing">This is where I'm trying to put the carousel image captions :/</h1>
-
- 
 				<p align="center" class="main">We are a devoted development team that specialises in web development and design for any online presence. Using our skills and our client's ideas, we combined creativity and innovation together to produce a responsive, dynamic site that the client can manage from our own control platform.</p>
 			</div>
 		</div>
@@ -177,21 +185,21 @@
 	<div class="container space">
 		<h1 class="main">Trusted and used by companies such as</h1>
 		<div class="row">
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/envisoned.png" width="100%"></div>
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/gunsdaily.png" width="100%"></div>
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/galacticservers.png" width="100%"></div>
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/minereach.png" width="100%"></div>
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/chromahills.png" width="100%"></div>
-			<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/paradisemc.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/envisoned.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/gunsdaily.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/galacticservers.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/minereach.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/chromahills.png" width="100%"></div>
+			<div class="col-md-2 clients"><img src="assets/img/logos/paradisemc.png" width="100%"></div>
 		</div>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/craftgasm.png" width="100%"></div>
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/nirvanamc.png" width="100%"></div>
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/timelessmc.png" width="100%"></div>
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/minetract.png" width="100%"></div>
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/syclonestudios.png" width="100%"></div>
-				<div class="col-md-2 clients"><img src="http://localhost/merlin.luke.sx/assets/img/logos/joemethven.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/craftgasm.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/nirvanamc.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/timelessmc.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/minetract.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/syclonestudios.png" width="100%"></div>
+				<div class="col-md-2 clients"><img src="assets/img/logos/joemethven.png" width="100%"></div>
 			</div>
 		</div>
 		<a href=""><h5 class="main link center">See why so many people love us</h5></a>
@@ -206,7 +214,7 @@
 					<h1 class="main">Read Our Latest Blogs</h1>
 				</div>
 				<div class="col-md-6">
-					<a href=""><h3 class="main left">Automatic Link Shortener</h3></a>
+					<a href=""><h3 class="main left">Automatic Image Viewer</h3></a>
 					<p class="blog">Viewing images is fun, viewing lots of images and having to manually add and change the code for each image is no so fun. Now imagine all you had to do was upload the photos to the server and that was it. Pretty nifty right?</p>
 					<a href="" class="red-button">Coming Soon</a>
 				</div>

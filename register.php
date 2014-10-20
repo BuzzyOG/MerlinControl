@@ -12,9 +12,6 @@
     // Load navbar
     include './assets/navbar.php';
 
-    // Includes slider
-    require './assets/slider.php';
-
     // Initializes the registration
     $registration = new Registration();
 

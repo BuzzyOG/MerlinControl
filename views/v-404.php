@@ -12,32 +12,22 @@
 ?>
 
 <div class="container">
-	<h1 align="center"><?php echo $errorMessage ?></h1>
-	<h4 align="center">That page was not found</h4>
-	<form style="margin-bottom:50px;" method="post" action="http://dev.gunsdaily.net/login">
 
+		<ol class="breadcrumb">
+			<li>Home</li>
+			<li class="active">404</li>
+		</ol>
 
-	<div class="row">
-		<div class="col-md-4 col-md-offset-4">	
+		<div class="row">
+				<div class="col-md-8 col-md-offset-2 outershadow color bg3">
 
-			<div class="row" style="margin-top:20px;">
-				<div class="col-md-12">
-					<div class="row">
-						<div class="col-md-6">
-							<input type="button" class="form-button green" value="Profile" onClick="parent.location='<?php echo $fullUrl; ?>account'">
-						</div>
-						<div class="col-md-6">
-							<input type="button" class="form-button red  " value="Home"    onClick="parent.location='<?php echo $fullUrl; ?>'" style="margin-right: 10px; float: left !important;">
-						</div>
-					</div>
-					
+					<h1 class="main center" style="margin-top:-20px;">That page was not found</h1>
+					<h3 class="main logintext center"><?php echo $errorMessage ?></h3>
+					<input type="button" class="red-button" value="return home" onClick="parent.location='http://merlin.luke.sx'">
 				</div>
-
-
-			</div>
+				<div class="col-md-6">
+				</div> 
 		</div>
-	</div>
 
-
-	</form>
+	
 </div>

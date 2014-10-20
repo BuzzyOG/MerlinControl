@@ -8,14 +8,17 @@
 			<a class="navbar-brand" href="#">MerlinControl</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="#">Home</a></li>
-					<li><a href="#about">about</a></li>
+					<li><a href="http://merlin.luke.sx">Home</a></li>
+					<li><a href="about">about</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#contact">Contact</a></li>
-					<li><?php echo $navlogin; ?></li>
+					<li><a href="contact">Contact</a></li>
+					<?php echo $navlogin; ?>
 				</ul>
 			</div>
 	</div><!--CONTAINER-->
 </nav><!--NAVBAR-->
 <div class="page-wrap">
+
+<div class="spacing"></div>
+<body>

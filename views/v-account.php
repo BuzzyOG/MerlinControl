@@ -7,7 +7,14 @@
 				<a class="logout" href="account.php?logout">Logout</a>
 			</div>
 		</div>
-
+		<?php
+			$test = hash('adler32',  $_SESSION['user_email']);
+			$test2 = hash('adler32', 'me@luke.sx');
+			echo $test;
+			if ($test == $test2) {
+				echo "<h1>MATCH!</h1>";
+			}
+		?>
 		<div class="col-md-5">
 			<div class="form-box">
 					<h3><i class="fa fa-shopping-cart"></i> <b>0</b> products are in your cart.</h3>

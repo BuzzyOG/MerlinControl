@@ -11,10 +11,6 @@
     // Load navbar
     include './assets/navbar.php';
 
-    // Includes slider
-    require './assets/slider.php';
-
-
     // if logged in display content
     if ($login->isUserLoggedIn() == true) {
         include("views/v-404.php");

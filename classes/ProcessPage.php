@@ -36,11 +36,13 @@
 
 	// Navbar logged in status
 	if ($login->isUserLoggedIn() == true) {
-	   $navlogin = "<a class='account' href='login'>Account" . "&nbsp;<img class='account-avatar' width='30px' src='" . $grav_url . "'></a>";
+	   $navlogin = "<li class='dropdown'><li class='account'><a class='account' class='dropdown-toggle' data-toggle='dropdown' href='#'>Account&nbsp;<img class='account-avatar' width='30px' src='" . $grav_url . "'></a><ul class='dropdown-menu' role='menu'><li><a href='#'>Dashboard</a></li><li class='divider'></li><li class='dropdown-header'>Hey there " . $_SESSION['user_name'] . "</li><li><a href='account'>My Account</a></li><li><a href='?logout'>Log me out</a></li></ul></li>";
+	  
+						
 	   $loginH1DisplayTag = "Welcome <b>" . $_SESSION['user_name'] . "&nbsp;</b>&nbsp;<img class='account-avatar' src='" . $grav_url . "'>";
 
 	} else {
-	    $navlogin = "<a href='login'>Login</a>";
+	    $navlogin = "<li><a href='login'>Login</a></li>";
 	    $loginH1DisplayTag  = "Login";
 
 	}
