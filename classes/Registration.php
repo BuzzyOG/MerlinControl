@@ -78,6 +78,7 @@ class Registration
 
                 // escaping, additionally removing everything that could be (html/javascript-) code
                 $user_name = $this->db_connection->real_escape_string(strip_tags($_POST['user_name'], ENT_QUOTES));
+                $user_last = $this->db_connection->real_escape_string(strip_tags($_POST['user_last'], ENT_QUOTES));
                 $user_email = $this->db_connection->real_escape_string(strip_tags($_POST['user_email'], ENT_QUOTES));
 
                 $user_password = $_POST['user_password_new'];
@@ -88,20 +89,43 @@ class Registration
                 $user_password_hash = password_hash($user_password, PASSWORD_DEFAULT);
 
                 // check if user or email address already exists
-                $sql = "SELECT * FROM users WHERE user_name = '" . $user_name . "' OR user_email = '" . $user_email . "';";
+                $sql = "SELECT * FROM users WHERE user_email = '" . $user_email . "';";
                 $query_check_user_name = $this->db_connection->query($sql);
 
                 if ($query_check_user_name->num_rows == 1) {
                     $this->errors[] = "<div class='alert alert-danger center' role='alert'> Sorry, that username / email address is already taken. </div>";
                 } else {
                     // write new user's data into database
-                    $sql = "INSERT INTO users (user_name, user_password_hash, user_email)
-                            VALUES('" . $user_name . "', '" . $user_password_hash . "', '" . $user_email . "');";
+                    $sql = "INSERT INTO users (user_name, user_last, user_password_hash, user_email)
+                            VALUES('" . $user_name . "', '" . $user_last . "', '" . $user_password_hash . "', '" . $user_email . "');";
                     $query_new_user_insert = $this->db_connection->query($sql);
 
                     // if user has been added successfully
                     if ($query_new_user_insert) {
-                        $this->messages[] = "<div class='alert alert-success center' role='alert'> Your account has been created successfully. You can now log in. </div>";
+                        $this->messages[] = "<div class='alert alert-success center' role='alert'> Your account has been created successfully. Please check your emails.</div>";
+
+                        // Load username and datejoined for verifcation via email hashing
+                        $sql="SELECT `user_id`, `user_name`, `user_date_joined` FROM `users` WHERE `user_email` = '" . $user_email . "';";
+                        $query_load_hash_verify = $this->db_connection->query($sql);
+
+                        // if  loaded then include send email and display message
+                        if ( $query_load_hash_verify) {
+                            $result_row = $query_load_hash_verify -> fetch_object();
+                                $codeid = $result_row->user_id;
+                                $code2 = md5($result_row->user_name);
+                                $code3 = md5($result_row->user_date_joined);
+
+                                // created a hash of when the user joined split it into two parts
+                                $cuthashtime = substr($code3, 0, 4);
+                                $endhashtime = substr($code3, -4); 
+
+                                $hashedname = $code2;
+                                $middlehashname = substr($hashedname, 0, 4);
+
+                                include 'Email.php';
+                        } else {
+                             $this->errors[] = "<div class='alert alert-danger center' role='alert'> Sorry, but we couldn't send your email. Please contact support.</div>";
+                        }
                     } else {
                         $this->errors[] = "<div class='alert alert-danger center' role='alert'> Sorry, your registration failed. Please go back and try again. </div>";
                     }

@@ -23,7 +23,7 @@
 
 					<div class="col-md-12 form">
 						<label>Last Name</label>
-						<input class="login_input" placeholder="Last Name" type="text">
+						<input class="login_input" placeholder="Last Name" name="user_last" type="text">
 					</div>
 
 					<div class="col-md-12 form">
